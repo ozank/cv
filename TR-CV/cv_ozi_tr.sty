@@ -3,6 +3,7 @@
 %% This file may be modified, copied and redistributed without any further permission.
 %% However, if you modify it, please add a note indicating it is a modification of the original.
 %% The original file is available at http://robjhyndman.com/research/cv.sty
+\usepackage[utf8]{inputenc}
 
 \usepackage{paralist,ragged2e,datetime}
 \usepackage{hyperref,fancyhdr,enumitem,color}
@@ -15,13 +16,14 @@
 
 % Header and footer
 \pagestyle{fancy}
-\lhead{\sf Curriculum Vitae: \@name}
+\lhead{\sf Özgeçmiş: \@name}
 \rhead{\sf\thepage}
 \cfoot{}
 
 % Date format
-\newdateformat{rjh}{\THEYEAR}
-\rjh
+\newdateformat{ayyil}{\THEMONTH/\THEYEAR}
+\ayyil
+
 
 % Header box
 \def\name#1{\def\@name{#1}}
@@ -34,8 +36,9 @@
 \shadebox[0.9]{17.3cm}{\sf\color[rgb]{.6,0,0}
 \hbox to 17cm{\begin{tabular}{p{7.4cm}}
 \LARGE\textbf{\@name}\\[0.3cm]
+\Large\textbf{}\\[0.4cm]
 %\Large\textbf{Özgeçmiş}\\[0.6cm]
-\normalsize\today
+\small\today
 \end{tabular}
 \hfill\hbox{\fontsize{9}{12}\sf
 \begin{tabular}{@{}rp{7.2cm}@{}}
@@ -58,6 +61,7 @@
 \setlength{\tabcolsep}{0.15cm}
 \clubpenalty = 10000
 \widowpenalty = 10000
+\hyphenpenalty = 1000
 \setlist{itemsep=1pt}
 \setdescription{labelwidth=1.2cm,leftmargin=1.5cm,labelindent=1.5cm,font=\rm}
 
@@ -128,16 +132,16 @@
 
 % Bibliography categories
 \def\makebibcategory#1#2{\DeclareBibliographyCategory{#1}\defbibheading{#1}{\section*{#2}}}
-\makebibcategory{books}{Books}
-\makebibcategory{papers}{Refereed journal papers}
-\makebibcategory{chapters}{Book chapters}
-\makebibcategory{conferences}{Papers in conference proceedings}
-\makebibcategory{techreports}{Unpublished working papers}
-\makebibcategory{bookreviews}{Book reviews}
+\makebibcategory{books}{Kitap}
+\makebibcategory{papers}{Hakemli Dergi Makaleleri}
+\makebibcategory{chapters}{Kitap Bölümü}
+\makebibcategory{conferences}{Konferans Makaleleri}
+\makebibcategory{techreports}{Yayınlanmamış Raporlar}
+\makebibcategory{bookreviews}{Kitap Değerlendirmeleri}
 \makebibcategory{editorials}{Editorials}
-\makebibcategory{phd}{PhD thesis}
+\makebibcategory{phd}{Tez}
 \makebibcategory{subpapers}{Submitted papers}
-\makebibcategory{curpapers}{Current projects}
+\makebibcategory{curpapers}{Güncel Projeler}
 
 \setlength{\bibitemsep}{2.65pt}
 \setlength{\bibhang}{.8cm}
@@ -152,7 +156,7 @@
 {\endlist}
 {\bibitem}
 
-\newenvironment{publications}{\section{\LARGE Publications}\label{papersstart}\vspace*{0.2cm}\small
+\newenvironment{publications}{\section{\LARGE Yayınlar}\label{papersstart}\vspace*{0.2cm}\small
 \titlespacing{\section}{0pt}{1.5ex}{1ex}\itemsep=0.00cm
 }{\label{papersend}\addtocounter{sumpapers}{-1}\refstepcounter{sumpapers}\label{sumpapers}}
 
