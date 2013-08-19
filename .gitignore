@@ -30,3 +30,6 @@
 *.vrb
 *.xdy
 *.tdo
+*.run.xml
+*-blx.bib
+
