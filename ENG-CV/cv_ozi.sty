@@ -65,7 +65,11 @@
 
 \usepackage[sorting=ydnt,bibstyle=authoryear-comp,labelyear=false,defernumbers=true,maxnames=20,firstinits=true, uniquename=init,dashed=false,backend=bibtex]{biblatex}
 
-\DeclareFieldFormat{url}{\url{#1}}
+%remove url's by Ozan
+%\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat{url}{}
+%remove doi by Ozan
+\DeclareFieldFormat{doi}{}
 \DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
 \DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
@@ -129,15 +133,16 @@
 % Bibliography categories
 \def\makebibcategory#1#2{\DeclareBibliographyCategory{#1}\defbibheading{#1}{\section*{#2}}}
 \makebibcategory{books}{Books}
-\makebibcategory{papers}{Refereed journal papers}
-\makebibcategory{chapters}{Book chapters}
-\makebibcategory{conferences}{Papers in conference proceedings}
-\makebibcategory{techreports}{Unpublished working papers}
-\makebibcategory{bookreviews}{Book reviews}
+\makebibcategory{papers}{Refereed Journal Papers}
+\makebibcategory{chapters}{Book Chapters}
+\makebibcategory{conferences}{Papers in Conference Proceedings}
+\makebibcategory{techreports}{Unpublished Working Papers}
+\makebibcategory{bookreviews}{Book Reviews}
 \makebibcategory{editorials}{Editorials}
-\makebibcategory{phd}{PhD thesis}
-\makebibcategory{subpapers}{Submitted papers}
-\makebibcategory{curpapers}{Current projects}
+\makebibcategory{phd}{PhD Thesis}
+\makebibcategory{subpapers}{Submitted Papers}
+\makebibcategory{curpapers}{Current Projects}
+\makebibcategory{unpublished}{Manuscripts in Preparation}
 
 \setlength{\bibitemsep}{2.65pt}
 \setlength{\bibhang}{.8cm}

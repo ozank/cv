@@ -69,7 +69,11 @@
 
 \usepackage[sorting=ydnt,bibstyle=authoryear-comp,labelyear=false,defernumbers=true,maxnames=20,firstinits=true, uniquename=init,dashed=false,backend=bibtex]{biblatex}
 
-\DeclareFieldFormat{url}{\url{#1}}
+%remove url's by Ozan
+%\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat{url}{}
+%remove doi by Ozan
+\DeclareFieldFormat{doi}{}
 \DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
 \DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
@@ -142,6 +146,7 @@
 \makebibcategory{phd}{Tez}
 \makebibcategory{subpapers}{Submitted papers}
 \makebibcategory{curpapers}{Güncel Projeler}
+\makebibcategory{unpublished}{Hazırlanan Yayınlar}
 
 \setlength{\bibitemsep}{2.65pt}
 \setlength{\bibhang}{.8cm}
