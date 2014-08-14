@@ -66,68 +66,18 @@
 \usepackage[sorting=ydnt,bibstyle=authoryear-comp,labelyear=false,defernumbers=true,maxnames=20,firstinits=true, uniquename=init,dashed=false,backend=bibtex]{biblatex}
 
 %remove url's by Ozan
-%\DeclareFieldFormat{url}{\url{#1}}
-\DeclareFieldFormat{url}{}
+\DeclareFieldFormat{url}{\url{#1}}
+%\DeclareFieldFormat{url}{}
 %remove doi by Ozan
 \DeclareFieldFormat{doi}{}
 \DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
 \DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
-\DeclareFieldFormat[article]{volume}{\textbf{#1}}
+%\DeclareFieldFormat[article]{volume}{\textbf{#1}}
 \DeclareFieldFormat[article]{number}{(#1)}
 \DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
-\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat[inproceedings]{title}{\MakeCapital{#1}}
 \DeclareFieldFormat{shorthandwidth}{#1}
-
-% Don't use "In:" in bibliography. Omit urls from journal articles.
-\DeclareBibliographyDriver{article}{%
-  \usebibmacro{bibindex}%
-  \usebibmacro{begentry}%
-  \usebibmacro{author/editor}%
-  \setunit{\labelnamepunct}\newblock
-  \MakeSentenceCase{\usebibmacro{title}}%
-  \newunit
-  \printlist{language}%
-  \newunit\newblock
-  \usebibmacro{byauthor}%
-  \newunit\newblock
-  \usebibmacro{byeditor+others}%
-  \newunit\newblock
-  \printfield{version}%
-  \newunit\newblock
-%  \usebibmacro{in:}%
-  \usebibmacro{journal+issuetitle}%
-  \newunit\newblock
-  \printfield{note}%
-  \setunit{\bibpagespunct}%
-  \printfield{pages}
-  \newunit\newblock
-  \usebibmacro{eprint}
-  \newunit\newblock
-  \printfield{addendum}%
-  \newunit\newblock
-  \usebibmacro{pageref}%
-  \usebibmacro{finentry}}
-
-% Remove dot between volume and number in journal articles.
-\renewbibmacro*{journal+issuetitle}{%
-  \usebibmacro{journal}%
-  \setunit*{\addspace}%
-  \iffieldundef{series}
-    {}
-    {\newunit
-     \printfield{series}%
-     \setunit{\addspace}}%
-  \printfield{volume}%
-%  \setunit*{\adddot}%
-  \printfield{number}%
-  \setunit{\addcomma\space}%
-  \printfield{eid}%
-  \setunit{\addspace}%
-  \usebibmacro{issue+date}%
-  \newunit\newblock
-  \usebibmacro{issue}%
-  \newunit}
 
 
 % Bibliography categories
