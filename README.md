@@ -1,4 +1,4 @@
 cv
 ==
 
-CV - Özgeçmiş
+CV - Özgeçmiş2
